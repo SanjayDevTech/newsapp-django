@@ -50,7 +50,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CACHES = {
+    'default': {
+        'BACKEND': 'djpymemcache.backend.PyMemcacheCache',
+        'LOCATION': [
+            '127.0.0.1:11211',
+        ],
+    },
+}
+
 ROOT_URLCONF = 'newsapp.urls'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 TEMPLATES = [
     {
