@@ -1,0 +1,3 @@
+newsapi-python
+django-environ
+django-pymemcache

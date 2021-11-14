@@ -11,6 +11,21 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+from django.conf import settings
+from django.core.cache import cache
+
+if settings.DEBUG:
+    cache.clear()
+    print("Cache cleared")
+
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
+
+API_KEY = env("API_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
