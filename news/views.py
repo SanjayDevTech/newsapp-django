@@ -7,6 +7,11 @@ from newsapi import NewsApiClient
 newsapi = NewsApiClient(api_key=settings.API_KEY)
 
 
+def category(req, category):
+    category_news = newsapi.get_everything(q=category, page_size=8)['articles']
+    return render(req, 'category.html', {'category': category, 'headline': category_news[0], 'everything': category_news[1:]})
+
+
 def index(req):
     top_headlines = newsapi.get_top_headlines(
         q='covid', page_size=1)

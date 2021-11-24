@@ -74,17 +74,19 @@
 
 				<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 					<div class="navbar-nav m-auto">
-						<a href="/" class="nav-item nav-link active">Home</a>
-						<a href="/c/sports" class="nav-item nav-link">Sports</a>
-						<a href="/c/tech" class="nav-item nav-link">Tech</a>
-						<a href="/c/fashion" class="nav-item nav-link">Fashion</a>
+						<a href="/" class="nav-item nav-link">Home</a>
+						<a href="/c/sports"
+							class="nav-item nav-link {% if category == 'sports' %} active {% endif %}">Sports</a>
+						<a href="/c/tech"
+							class="nav-item nav-link {% if category == 'tech' %} active {% endif %}">Tech</a>
+						<a href="/c/fashion"
+							class="nav-item nav-link {% if category == 'fashion' %} active {% endif %}">Fashion</a>
 					</div>
 				</div>
 			</nav>
 		</div>
 	</div>
 	<!-- Header End -->
-
 
 	<!-- Top News Start-->
 	<div class="top-news">
@@ -118,110 +120,12 @@
 							</div>
 						</div>
 						{% endfor %}
-
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Top News End-->
-
-
-	<!-- Category News Start-->
-	<div class="cat-news">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-6">
-					<h2><i class="fas fa-align-justify"></i>Sports</h2>
-					<div class="row cn-slider">
-						{% for e in sports %}
-						<div class="col-md-6">
-							<div class="cn-img">
-								<img src="{{ e.urlToImage }}" />
-								<div class="cn-content">
-									<div class="cn-content-inner">
-										<a class="cn-date" href="{{ e.url }}"><i class="far fa-clock"></i>
-											{{ e.publishedAt }}</a>
-										<a class="cn-title" href="{{ e.url }}">{{ e.title }}</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						{% endfor %}
-
-					</div>
-				</div>
-				<div class="col-md-6">
-					<h2><i class="fas fa-align-justify"></i>Technology</h2>
-					<div class="row cn-slider">
-						{% for e in tech %}
-						<div class="col-md-6">
-							<div class="cn-img">
-								<img src="{{ e.urlToImage }}" />
-								<div class="cn-content">
-									<div class="cn-content-inner">
-										<a class="cn-date" href="{{ e.url }}"><i class="far fa-clock"></i>
-											{{ e.publishedAt }}</a>
-										<a class="cn-title" href="{{ e.url }}">{{ e.title }}</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Category News End-->
-
-
-	<!-- Category News Start-->
-	<div class="cat-news">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-6">
-					<h2><i class="fas fa-align-justify"></i>Business</h2>
-					<div class="row cn-slider">
-						{% for e in business %}
-						<div class="col-md-6">
-							<div class="cn-img">
-								<img src="{{ e.urlToImage }}" />
-								<div class="cn-content">
-									<div class="cn-content-inner">
-										<a class="cn-date" href="{{ e.url }}"><i class="far fa-clock"></i>
-											{{ e.publishedAt }}</a>
-										<a class="cn-title" href="{{ e.url }}">{{ e.title }}</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-				<div class="col-md-6">
-					<h2><i class="fas fa-align-justify"></i>Entertainment</h2>
-					<div class="row cn-slider">
-						{% for e in entertainment %}
-						<div class="col-md-6">
-							<div class="cn-img">
-								<img src="{{ e.urlToImage }}" />
-								<div class="cn-content">
-									<div class="cn-content-inner">
-										<a class="cn-date" href="{{ e.url }}"><i class="far fa-clock"></i>
-											{{e.publishedAt }}</a>
-										<a class="cn-title" href="{{ e.url }}">{{ e.title }}</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Category News End-->
 
 	<!-- Footer Start -->
 	<div class="footer">
