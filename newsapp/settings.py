@@ -13,13 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import environ
 
-from django.conf import settings
-from django.core.cache import cache
-
-if settings.DEBUG:
-    cache.clear()
-    print("Cache cleared")
-
 env = environ.Env()
 # reading .env file
 environ.Env.read_env()
@@ -64,15 +57,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-CACHES = {
-    'default': {
-        'BACKEND': 'djpymemcache.backend.PyMemcacheCache',
-        'LOCATION': [
-            '127.0.0.1:11211',
-        ],
-    },
-}
 
 ROOT_URLCONF = 'newsapp.urls'
 
